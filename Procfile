@@ -1,1 +1,1 @@
-worker: python %not_web_app%.py
+worker: python bot.py
