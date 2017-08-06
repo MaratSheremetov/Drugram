@@ -342,7 +342,7 @@ def out_markets(call, user_id):
     con.commit()
     data_pos = cur.fetchone()
 
-    print(data_pos[0])
+    #print(data_pos[0])
 
     if (data_pos[0] == 0):
         if (len(data_market) - 1 == 0):
