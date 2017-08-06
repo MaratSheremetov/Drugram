@@ -388,13 +388,16 @@ def rate(call,id):
     bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, parse_mode="HTML",text="Спасибо за вашу оценку")
 
 def chack_user(user_id):
-    cur.execute('SELECT user_id FROM users_list WHERE user_id = ' + str(user_id))
-    con.commit()
-    data_user = cur.fetchone()
-    if(data_user == None ):
-        return False
-    else:
-        return True
+    try:
+        cur.execute('SELECT user_id FROM users_list WHERE user_id = ' + str(user_id))
+        con.commit()
+        data_user = cur.fetchone()
+        if(data_user == None ):
+            return False
+        else:
+            return True
+    except:
+        pass
 
 def delete_user(user_id):
     cur.execute('DELETE FROM users_list WHERE user_id = '+ str(user_id))
