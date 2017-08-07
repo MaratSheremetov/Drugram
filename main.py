@@ -68,7 +68,7 @@ try:
             bot.send_message(message.chat.id, text='Выберете категорию вашей жалобы:', reply_markup=markup_lament)
 except:
     print("ERROR")
-    
+
 
 @bot.message_handler(commands=['help'])
 def handler_command_start(message):
@@ -346,7 +346,7 @@ def out_markets(call, user_id):
 
     if (data_pos[0] == 0):
         if (len(data_market) - 1 == 0):
-            None
+            pass
         else:
             markup_next.add(b_next)
     if (data_pos[0] != 0):
@@ -388,17 +388,20 @@ def rate(call,id):
     bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, parse_mode="HTML",text="Спасибо за вашу оценку")
 
 def chack_user(user_id):
-    cur.execute('SELECT user_id FROM users_list WHERE user_id = ' + str(user_id))
-    con.commit()
-    data_user = cur.fetchone()
-    if(data_user == None ):
-        return False
-    else:
-        return True
+    try:
+        cur.execute('SELECT user_id FROM users_list WHERE user_id = ' + str(user_id))
+        con.commit()
+        data_user = cur.fetchone()
+        if(data_user == None ):
+            return False
+        else:
+            return True
+    except:
+        pass
 
 def delete_user(user_id):
     cur.execute('DELETE FROM users_list WHERE user_id = '+ str(user_id))
     con.commit()
 
 
-bot.polling(none_stop=True)
+bot.polling(none_stop=True) #Пуллинг
