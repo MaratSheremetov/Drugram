@@ -330,7 +330,7 @@ def out_markets(call, user_id):
 
 #<<<<<<< HEAD
         ## Вывод данных ##
-=======
+#=======
     ## Output date ##
 #>>>>>>> 583ad9b460ec329bc189e085f4d929d540187a66
 
@@ -344,8 +344,8 @@ def out_markets(call, user_id):
         data_pos = cur.fetchone()
 
 #<<<<<<< HEAD
-        print(data_pos[0])
-=======
+#        print(data_pos[0])
+#=======
     #print(data_pos[0])
 #>>>>>>> 583ad9b460ec329bc189e085f4d929d540187a66
 
