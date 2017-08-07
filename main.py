@@ -9,7 +9,7 @@ con = sqlite3.connect('users.sqlite',check_same_thread=False)
 cur = con.cursor()
 
 
-#Хендлеры
+#Hundles
 try:
     @bot.message_handler(regexp="[/buy_]\d\d\d\d\d")
     def handle_message(message):
@@ -274,7 +274,7 @@ def callback_inline(call):
         con.commit()
         out_markets(call, call.message.chat.id)
 
-#Фуекции
+#Function
 
 def setCity_in_DB(call,user_id):
     try:
@@ -312,7 +312,7 @@ def getDrugName(call):
     bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=texts.enter_name_drug,reply_markup=markup_drugs)
 
 def out_markets(call, user_id):
-    ## Получение списка магазина ##
+    ## Get market list ##
     try:
         cur.execute('SELECT city FROM users_list WHERE user_id = '+str(user_id))
         con.commit()
@@ -328,7 +328,11 @@ def out_markets(call, user_id):
         data_market = cur.fetchall()
         ###############################
 
+<<<<<<< HEAD
         ## Вывод данных ##
+=======
+    ## Output date ##
+>>>>>>> 583ad9b460ec329bc189e085f4d929d540187a66
 
         markup_next = telebot.types.InlineKeyboardMarkup()
 
@@ -339,7 +343,11 @@ def out_markets(call, user_id):
         con.commit()
         data_pos = cur.fetchone()
 
+<<<<<<< HEAD
         print(data_pos[0])
+=======
+    #print(data_pos[0])
+>>>>>>> 583ad9b460ec329bc189e085f4d929d540187a66
 
         if (data_pos[0] == 0):
             if (len(data_market) - 1 == 0):
