@@ -326,37 +326,33 @@ def out_markets(call, user_id):
         con.commit()
 
         data_market = cur.fetchall()
-    except:
-        bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, parse_mode="HTML",
-                              text="```У нас технические проблемы. Мы уже работаем над их исправление. Просим прощения.```")
-    ###############################
+        ###############################
 
-    ## Вывод данных ##
+        ## Вывод данных ##
 
-    markup_next = telebot.types.InlineKeyboardMarkup()
+        markup_next = telebot.types.InlineKeyboardMarkup()
 
-    b_next = telebot.types.InlineKeyboardButton(text="--->", callback_data='next')
-    b_back = telebot.types.InlineKeyboardButton(text="<---",callback_data='back')
+        b_next = telebot.types.InlineKeyboardButton(text="--->", callback_data='next')
+        b_back = telebot.types.InlineKeyboardButton(text="<---",callback_data='back')
 
-    cur.execute('SELECT pos FROM users_list WHERE user_id = ' + str(call.message.chat.id))
-    con.commit()
-    data_pos = cur.fetchone()
+        cur.execute('SELECT pos FROM users_list WHERE user_id = ' + str(call.message.chat.id))
+        con.commit()
+        data_pos = cur.fetchone()
 
-    print(data_pos[0])
+        print(data_pos[0])
 
-    if (data_pos[0] == 0):
-        if (len(data_market) - 1 == 0):
-            pass
-        else:
-            markup_next.add(b_next)
-    if (data_pos[0] != 0):
-        if (len(data_market) - 1 <= data_pos[0]):
-            markup_next.add(b_back)
-            stop(len(data_market),user_id)
-        else:
-            markup_next.add(b_back,b_next)
+        if (data_pos[0] == 0):
+            if (len(data_market) - 1 == 0):
+                pass
+            else:
+                markup_next.add(b_next)
+        if (data_pos[0] != 0):
+            if (len(data_market) - 1 <= data_pos[0]):
+                markup_next.add(b_back)
+                stop(len(data_market),user_id)
+            else:
+                markup_next.add(b_back,b_next)
 
-    try:
 
         bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, parse_mode="HTML", text="<b>"+data_market[data_pos[0]][1]+"</b>"+"\n Описание: \n"
                                                                                                                             "<i>"+str(data_market[data_pos[0]][2])+"</i>"+"\n"                                                                                                     "Рейтинг: \n"+ ""
@@ -366,6 +362,9 @@ def out_markets(call, user_id):
                                                                                                                             "Оценить: /rate_"+str( data_market [data_pos[0]] [0] ) , reply_markup=markup_next)
     except IndexError:
         bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, parse_mode="Markdown",text="Нам очень жаль, но в этом городе _пока_ нету ни одного магазина.")
+    except:
+        bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, parse_mode="HTML",
+                              text="```У нас технические проблемы. Мы уже работаем над их исправление. Просим прощения.```")
 
 def stop(len_data_market, user_id):
     cur.execute('UPDATE users_list SET pos = ' + str(len_data_market-1) + ' WHERE user_id = ' + str(user_id))
@@ -404,4 +403,4 @@ def delete_user(user_id):
     con.commit()
 
 
-bot.polling(none_stop=True) #Пуллинг
+bot.polling(none_stop=True)
