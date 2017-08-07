@@ -326,14 +326,7 @@ def out_markets(call, user_id):
         con.commit()
 
         data_market = cur.fetchall()
-        ###############################
-
-#<<<<<<< HEAD
-        ## Вывод данных ##
-#=======
-    ## Output date ##
-#>>>>>>> 583ad9b460ec329bc189e085f4d929d540187a66
-
+        
         markup_next = telebot.types.InlineKeyboardMarkup()
 
         b_next = telebot.types.InlineKeyboardButton(text="--->", callback_data='next')
@@ -342,12 +335,6 @@ def out_markets(call, user_id):
         cur.execute('SELECT pos FROM users_list WHERE user_id = ' + str(call.message.chat.id))
         con.commit()
         data_pos = cur.fetchone()
-
-#<<<<<<< HEAD
-#        print(data_pos[0])
-#=======
-    #print(data_pos[0])
-#>>>>>>> 583ad9b460ec329bc189e085f4d929d540187a66
 
         if (data_pos[0] == 0):
             if (len(data_market) - 1 == 0):
@@ -360,7 +347,6 @@ def out_markets(call, user_id):
                 stop(len(data_market),user_id)
             else:
                 markup_next.add(b_back,b_next)
-
 
         bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, parse_mode="HTML", text="<b>"+data_market[data_pos[0]][1]+"</b>"+"\n Описание: \n"
                                                                                                                             "<i>"+str(data_market[data_pos[0]][2])+"</i>"+"\n"                                                                                                     "Рейтинг: \n"+ ""
