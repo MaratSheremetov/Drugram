@@ -328,11 +328,6 @@ def out_markets(call, user_id):
         data_market = cur.fetchall()
         ###############################
 
-<<<<<<< HEAD
-        ## Вывод данных ##
-=======
-    ## Output date ##
->>>>>>> 583ad9b460ec329bc189e085f4d929d540187a66
 
         markup_next = telebot.types.InlineKeyboardMarkup()
 
@@ -342,12 +337,6 @@ def out_markets(call, user_id):
         cur.execute('SELECT pos FROM users_list WHERE user_id = ' + str(call.message.chat.id))
         con.commit()
         data_pos = cur.fetchone()
-
-<<<<<<< HEAD
-        print(data_pos[0])
-=======
-    #print(data_pos[0])
->>>>>>> 583ad9b460ec329bc189e085f4d929d540187a66
 
         if (data_pos[0] == 0):
             if (len(data_market) - 1 == 0):
