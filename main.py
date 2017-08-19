@@ -73,6 +73,8 @@ except:
 @bot.message_handler(commands=['help'])
 def handler_command_start(message):
     bot.send_message(message.chat.id, parse_mode="Markdown",text=texts.help_text )
+    bot.send_message(message.chat.id, parse_mode="Markdown", text=texts.help_text_2)
+
 
 @bot.message_handler(commands=['start'])
 def handler_command_start(message):
@@ -338,6 +340,7 @@ def out_markets(call, user_id):
         con.commit()
         data_pos = cur.fetchone()
 
+
         if (data_pos[0] == 0):
             if (len(data_market) - 1 == 0):
                 pass
@@ -359,9 +362,9 @@ def out_markets(call, user_id):
                                                                                                                             "Оценить: /rate_"+str( data_market [data_pos[0]] [0] ) , reply_markup=markup_next)
     except IndexError:
         bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, parse_mode="Markdown",text="Нам очень жаль, но в этом городе _пока_ нету ни одного магазина.")
-    except:
+    except Exception as dital:
         bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, parse_mode="HTML",
-                              text="```У нас технические проблемы. Мы уже работаем над их исправление. Просим прощения.```")
+                              text="```У нас технические проблемы. Мы уже работаем над их исправление. Просим прощения.```"+str(dital))
 
 def stop(len_data_market, user_id):
     cur.execute('UPDATE users_list SET pos = ' + str(len_data_market-1) + ' WHERE user_id = ' + str(user_id))
