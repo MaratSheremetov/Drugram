@@ -339,6 +339,7 @@ def out_markets(call, user_id):
         cur.execute('SELECT pos FROM users_list WHERE user_id = ' + str(call.message.chat.id))
         con.commit()
         data_pos = cur.fetchone()
+        
 
 
         if (data_pos[0] == 0):
