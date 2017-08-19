@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="b960d45d-cab4-45e8-87e0-19f739a096ea" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/texts.py" afterPath="$PROJECT_DIR$/texts.py" />
     </list>
+=======
+    <list default="true" id="b960d45d-cab4-45e8-87e0-19f739a096ea" name="Default" comment="" />
+>>>>>>> 64fe15bfe2071038f72496fe2ce19903ee47b603
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +29,13 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="-720">
               <caret line="340" column="33" lean-forward="false" selection-start-line="340" selection-start-column="33" selection-end-line="340" selection-end-column="33" />
+=======
+            <state relative-caret-position="317">
+              <caret line="302" column="63" lean-forward="true" selection-start-line="302" selection-start-column="63" selection-end-line="302" selection-end-column="63" />
+>>>>>>> 64fe15bfe2071038f72496fe2ce19903ee47b603
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
                 <element signature="e#200#3003#0" expanded="false" />
@@ -310,6 +319,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1597015" sideWeight="0.13880368" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+=======
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1597015" sideWeight="0.86119634" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> 64fe15bfe2071038f72496fe2ce19903ee47b603
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -609,8 +622,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="-720">
           <caret line="340" column="33" lean-forward="false" selection-start-line="340" selection-start-column="33" selection-end-line="340" selection-end-column="33" />
+=======
+        <state relative-caret-position="317">
+          <caret line="302" column="63" lean-forward="true" selection-start-line="302" selection-start-column="63" selection-end-line="302" selection-end-column="63" />
+>>>>>>> 64fe15bfe2071038f72496fe2ce19903ee47b603
           <folding>
             <element signature="e#0#14#0" expanded="true" />
             <element signature="e#200#3003#0" expanded="false" />
